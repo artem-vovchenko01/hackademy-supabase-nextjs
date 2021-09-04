@@ -6,76 +6,80 @@ import Account from '../components/Account'
 import React from 'react'
 import { collapseTextChangeRangesAcrossMultipleVersions } from 'typescript'
 
-class Kyc extends React.Component {
-    constructor(props) {
-        super();
-        this.props = props;
-        this.state = {
-            phone: '',
-            firstName: '',
-            lastName: '',
-            country: '',
-            city: ''
-        }
-    }
-    handleFormSubmit() {
-    e.preventDefault();
-    this.setState({
-      phone: '',
-      firstName: '',
-      lastName: '',
-      country: '',
-      city: '',
-    });
-  }
+ export default class Kyc extends React.Component {
+//     constructor(props) {
+//         super();
+//         this.props = props;
+//         this.state = {
+//             phone: '',
+//             firstName: '',
+//             lastName: '',
+//             country: '',
+//             city: ''
+//         }
+//     }
 
-  handleChange = (e) => {
-    this.setState({[e.target.name]:e.target.value});
-  }
+//     handleFormSubmit() {
+//     e.preventDefault();
+//     this.setState({
+//       phone: '',
+//       firstName: '',
+//       lastName: '',
+//       country: '',
+//       city: '',
+//     });
+//   }
 
-  componentDidMount() {
-    this.userData = JSON.parse(localStorage.getItem('user'));
+//   handleChange = (e) => {
+//     this.setState({[e.target.name]:e.target.value});
+//   }
 
-    if (localStorage.getItem('user')) {
-        this.setState({
-            phone: this.userData.phone,
-            firstName: this.userData.firstName,
-            lastName: this.userData.lastName,
-            country: this.userData.country,
-            city: this.userData.city,
-        });
-    } else {
-        this.setState({
-            phone: '',
-            firstName: '',
-            lastName: '',
-            country: '',
-            city: '',
-        });
-    }
-}
+//   componentDidMount() {
+//     this.userData = JSON.parse(localStorage.getItem('user'));
 
-componentWillUpdate(nextProps, nextState) {
-    localStorage.setItem('user', JSON.stringify(nextState));
-  }
+//     if (localStorage.getItem('user')) {
+//         this.setState({
+//             phone: this.userData.phone,
+//             firstName: this.userData.firstName,
+//             lastName: this.userData.lastName,
+//             country: this.userData.country,
+//             city: this.userData.city,
+//         });
+//     } else {
+//         this.setState({
+//             phone: '',
+//             firstName: '',
+//             lastName: '',
+//             country: '',
+//             city: '',
+//         });
+//     }
+// }
+
+// componentWillUpdate(nextProps, nextState) {
+//     localStorage.setItem('user', JSON.stringify(nextState));
+//   }
 
   render() {
-  const [session, setSession] = useState(null)
-  useEffect(() => {
-    setSession(supabase.auth.session())
-  })
-  if (session) {
       return (
-          <h1> session yes </h1>
+          <h1></h1>
       )
-  }
-  else return (
-      <>
-        <h1>You're not logged in</h1>
-        <Link href='/login'>
-            <a>Login</a>
-        </Link>
-    </>
-  )
+//   const [session, setSession] = useState(null)
+// //   useEffect(() => {
+// //     setSession(supabase.auth.session())
+// //   })
+//   if (session) {
+//       return (
+//           <h1> session yes </h1>
+//       )
+//   }
+//   else return (
+//       <>
+//         <h1>You're not logged in</h1>
+//         <Link href='/login'>
+//             <a>Login</a>
+//         </Link>
+//     </>
+//   )
 }
 }
