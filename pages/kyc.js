@@ -4,7 +4,6 @@ import Link from 'next/link'
 import Auth from '../components/Auth'
 import Account from '../components/Account'
 import React from 'react'
-import { collapseTextChangeRangesAcrossMultipleVersions } from 'typescript'
 
  export default class Kyc extends React.Component {
 //     constructor(props) {
